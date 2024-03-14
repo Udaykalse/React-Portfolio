@@ -105,7 +105,7 @@ function Frontend() {
             <br />
 
             <Typography variant="body1" style={{ fontStyle: "italic" }}>
-              FirstStore, Oct 2023 - Feb 2024
+              FirstStore, Oct 2023 - Feb 2025
             </Typography>
           </Typography>
           <ul>
