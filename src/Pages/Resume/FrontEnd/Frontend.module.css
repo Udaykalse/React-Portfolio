@@ -1,0 +1,60 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    margin-bottom: 40px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1, h2, h3 {
+    color: #333;
+  }
+  
+  p {
+    margin: 10px 0;
+  }
+
+  .SpanText{
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .SpanText:hover{
+    border-bottom: 2px green solid;
+  }
+  
+  .sectiontitle {
+    margin-top: 30px;
+  }
+  
+  .education, .experience {
+    margin-bottom: 20px;
+  }
+  
+  .education h2, .experience h2 {
+    margin-top: 0;
+  }
+  
+  .skills {
+    margin-top: 20px;
+   
+  }
+  
+  .skill {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 10px;
+    margin: 0 5px 5px 0;
+    border-radius: 5px;
+  }
+  
