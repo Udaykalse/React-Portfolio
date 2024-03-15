@@ -5,7 +5,7 @@
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 100vh;
+    height: auto;
     margin-bottom: 40px;
   }
   
@@ -18,8 +18,10 @@
     color: #333;
   }
   
-  p {
+  .Text {
     margin: 10px 0;
+    display: flex;
+
   }
 
   .SpanText{
@@ -58,3 +60,96 @@
     border-radius: 5px;
   }
   
+
+  @media screen and (max-width: 800px) {
+    .Text{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+  /* 
+  uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git init
+Initialized empty Git repository in /home/uday/HTML-CSS/Instagram/Portfolio/my-portfolio/.git/
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git add .
+uday@uday:~/HTML-CSS/Instagram/Portfoluday@uday:~/HTML-CSS/Instagram/Portfolio/myuday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git comit -m "React Potfolio"
+git: 'comit' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git commit -m "React Potfolio"
+[main (root-commit) 95de6f9] React Potfolio
+ 36 files changed, 5969 insertions(+)
+ create mode 100644 .eslintrc.cjs
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100644 index.html
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 public/vite.svg
+ create mode 100644 src/App.css
+ create mode 100644 src/App.jsx
+ create mode 100644 src/Component/Header/DrawerComp.jsx
+ create mode 100644 src/Component/Header/Header.jsx
+ create mode 100644 src/Component/Navbar/ResponsiveAppBar.jsx
+ create mode 100644 src/Pages/About/About.jsx
+ create mode 100644 src/Pages/About/Style.module.css
+ create mode 100644 src/Pages/Blogs/Blogs.jsx
+ create mode 100644 src/Pages/Blogs/Style.module.css
+ create mode 100644 src/Pages/Contact/Contact.jsx
+ create mode 100644 src/Pages/Contact/Style.module.css
+ create mode 100644 src/Pages/Experirnce/Experience.jsx
+ create mode 100644 src/Pages/Experirnce/Style.module.css
+ create mode 100644 src/Pages/Home/Home.jsx
+ create mode 100644 src/Pages/Home/Style.module.css
+ create mode 100644 src/Pages/Projects/Project.jsx
+ create mode 100644 src/Pages/Projects/Style.module.css
+ create mode 100644 src/Pages/Resume/Backend/Backend.jsx
+ create mode 100644 src/Pages/Resume/FrontEnd/Frontend.css
+ create mode 100644 src/Pages/Resume/FrontEnd/Frontend.jsx
+ create mode 100644 src/Pages/Resume/FrontEnd/Frontend.module.css
+ create mode 100644 src/Pages/Resume/Resume.jsx
+ create mode 100644 src/Pages/Resume/Style.module.css
+ create mode 100644 src/Pages/Skills/Skills.jsx
+ create mode 100644 src/assets/react.svg
+ create mode 100644 src/index.css
+ create mode 100644 src/main.jsx
+ create mode 100644 src/routesBox/routeComp.jsx
+ create mode 100644 vite.config.js
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git remote add origin https://github.com/Udaykalse/React-Portfolio.git
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git branch -M main
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git push -u origin main
+Enumerating objects: 47, done.
+Counting objects: 100% (47/47), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (40/40), done.
+Writing objects: 100% (47/47), 56.31 KiB | 1.22 MiB/s, done.
+Total 47 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/Udaykalse/React-Portfolio.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+uday@uday:~/HTML-CSS/Instagram/Portfol
+uday@uday:~/HTML-CSS/Instagram/Portfol
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git push
+Everything up-to-date
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ 
+ *  History restored 
+
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git push
+Everything up-to-date
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git push
+fatal: unable to access 'https://github.com/Udaykalse/React-Portfolio.git/': Could not resolve host: github.com
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 535 bytes | 267.00 KiB/s, done.
+Total 7 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+To https://github.com/Udaykalse/React-Portfolio.git
+   95de6f9..a2423a0  main -> main
+uday@uday:~/HTML-CSS/Instagram/Portfolio/my-portfolio$ git push -u origin main
+  */

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import html2pdf from "html2pdf.js";
 import Style from "./Frontend.module.css";
 import Divider from "@mui/material/Divider";
 import { Box, Typography, Button } from "@mui/material";
-import html2pdf from "html2pdf.js";
 
 function Frontend() {
   const handleDownloadPDF = () => {
@@ -16,38 +16,52 @@ function Frontend() {
     nodeJS: false,
   });
 
-  const [containerHeight, setContainerHeight] = useState("100vh");
+  const [containerHeight, setContainerHeight] = useState("auto");
 
   const toggleVisibility = (section) => {
     setIsVisible((prevState) => ({
       ...prevState,
       [section]: !prevState[section],
     }));
-
-    if (isVisible.webTechnologies || isVisible.reactJS || isVisible.nodeJS) {
-      setContainerHeight("120vh");
-    } else {
-      setContainerHeight("120vh");
-    }
+    setContainerHeight(
+      isVisible.webTechnologies || isVisible.reactJS || isVisible.nodeJS
+        ? "auto"
+        : "auto"
+    );
   };
 
   return (
-    <div
+    <Box
       className={Style.container}
       id="resume-container"
-      style={{
-        height: containerHeight,
+      sx={{
+        height: { xs: "auto", sm: containerHeight },
+        width: { xs: "100%", sm: "100%" },
+        ml: { xs: "-10%", sm: "25%" },
         backgroundColor:
           isVisible.nodeJS || isVisible.reactJS || isVisible.webTechnologies
             ? "lightgray"
             : "white",
       }}
     >
-      <header className={Style.Header}>
+      <header
+        className={Style.Header}
+        sx={{
+          height: { xs: "auto", sm: "auto" },
+          width: { xs: "100%", sm: "100%" },
+        }}
+      >
         <h1 className={Style.heading}>Udaysinh Kalse</h1>
-        <p className={Style.Text}>
-          <span className={Style.SpanText}>932-599-9657</span>|
-          <span className={Style.SpanText}>udaykalse123@gmail.com</span>|
+        <p
+          sx={{
+            flexDirection: { xs: "column", sm: "column", lg: "row" },
+            justifyContent: { lg: "space-between" },
+          }}
+        >
+          <span className={Style.SpanText}>932-599-9657</span>{" "}
+          <span sx={{ display: { xs: "none", sm: "inline" } }}>|</span>
+          <span className={Style.SpanText}>udaykalse123@gmail.com</span>{" "}
+          <span sx={{ display: { xs: "none", sm: "inline" } }}>|</span>
           <span className={Style.SpanText}>
             <a
               href="https://www.linkedin.com/in/uday-kalse-2a3687249/"
@@ -56,7 +70,7 @@ function Frontend() {
               linkedin
             </a>
           </span>
-          |
+          <span sx={{ display: { xs: "none", sm: "inline" } }}>|</span>
           <span className={Style.SpanText}>
             <a href="https://github.com/Udaykalse" className={Style.SpanText}>
               github
@@ -73,26 +87,54 @@ function Frontend() {
         variant="middle"
         sx={{ marginTop: "-10px", borderStyle: "solid", borderWidth: "1px" }}
       />
-      <Box display="flex" flexDirection="row">
-        <Box>
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "column", lg: "row" },
+          justifyContent: { lg: "space-between" },
+        }}
+      >
+        <Box className="box p-4">
+          <strong>Swami Ramanand Teerth Marathwada University</strong>
+          <br />
+          <p className="italic">Bachelor of Science in Computer Science</p>
+        </Box>
+        <Box className="box p-4">
+          <span>Nanded, Maharashtra</span>
+          <p className="italic">Aug. 2019 - Sep. 2022</p>
+        </Box>
+      </Box>
+
+      <Divider
+        variant="middle"
+        sx={{ marginTop: "-10px", borderStyle: "solid", borderWidth: "1px" }}
+      />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "column", lg: "row" },
+          justifyContent: { lg: "space-between" },
+        }}
+      >
+        <Box className="box p-4">
           <p>
-            <strong>Swami Ramanand Teerth Marathwada University</strong>
+            <strong>Maharashtra JR.Mahavidylaya,Latur</strong>
             <br />
             <Typography variant="body1" style={{ fontStyle: "italic" }}>
-              Bachelor of Science in Computer Science
+              Higher Secondary Education
             </Typography>
           </p>
         </Box>
-        <Box marginLeft={35}>
+        <Box className="box p-4">
           <p>
-            <span>Nanded, Maharashtra</span>
+            <span>Latur, Maharashtra</span>
             <Typography variant="body1" style={{ fontStyle: "italic" }}>
-              Aug. 2019 - Sep. 2022
+              Aug. 2019 with 52.77%
             </Typography>
           </p>
         </Box>
       </Box>
-
       <h2 className={Style.sectiontitle}>Experience</h2>
       <Divider
         variant="middle"
@@ -103,7 +145,6 @@ function Frontend() {
           <Typography variant="subtitle1">
             <strong>React Web Developer Intern</strong>
             <br />
-
             <Typography variant="body1" style={{ fontStyle: "italic" }}>
               FirstStore, Oct 2023 - Feb 2025
             </Typography>
@@ -150,6 +191,63 @@ function Frontend() {
         </Box>
       </Box>
 
+      <h2 className={Style.sectiontitle}>Projects</h2>
+      <Divider variant="middle" sx={{ margin: "10px" }} />
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box sx={{ marginRight: 4 }}>
+          <Typography variant="subtitle1">
+            <strong>Blog App</strong>
+            <br />
+            <Typography variant="body1" style={{ fontStyle: "italic" }}>
+              Full Stack Blog Application with MERN (MongoDB, Express.js,
+              React.js, Node.js)
+            </Typography>
+          </Typography>
+          <ul>
+            <Typography component="li" variant="body1">
+              Frontend design and development using React.js, implementing
+              responsive UI/UX features for enhanced user experience.
+            </Typography>
+            <Typography component="li" variant="body1">
+              Backend RESTful API creation with Node.js and Express.js,
+              facilitating seamless communication between server and client.
+            </Typography>
+            <Typography component="li" variant="body1">
+              Database management and schema design with MongoDB, ensuring
+              efficient data storage and retrieval for dynamic content
+              management.
+            </Typography>
+          </ul>
+        </Box>
+        <Box>
+          <Typography variant="subtitle1">
+            <strong> RESTful APIs </strong>
+            <br />
+            <Typography variant="body1" style={{ fontStyle: "italic" }}>
+              RESTful APIs using Node.js for efficient data handling and
+              seamless integration.
+            </Typography>
+          </Typography>
+          <ul>
+            <Typography component="li" variant="body1">
+              Implemented CRUD operations (Create, Read, Update, Delete) using
+              Node.js and Express.js to build RESTful APIs.
+            </Typography>
+            <Typography component="li" variant="body1">
+              Managed data storage and retrieval using MongoDB Atlas or any
+              other database technology.
+            </Typography>
+            <Typography component="li" variant="body1">
+              Ensured adherence to RESTful principles for designing scalable and
+              maintainable APIs.
+            </Typography>
+            <Typography component="li" variant="body1">
+              Implemented error handling middleware to catch and respond to
+              errors gracefully, improving the robustness of the API.
+            </Typography>
+          </ul>
+        </Box>
+      </Box>
       <Divider variant="middle" sx={{ margin: "10px" }} />
       <Box
         className={Style.skills}
@@ -243,7 +341,7 @@ function Frontend() {
       >
         Download as PDF
       </Button>
-    </div>
+    </Box>
   );
 }
 
