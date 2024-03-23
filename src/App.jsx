@@ -1,7 +1,6 @@
 
 import Navbar from './routesBox/routeComp'
-// import Navbar from './routesBox/routeComp'
-// import Navbar from './Pages/Resume/FrontEnd/Frontend'
+
 
 
 
